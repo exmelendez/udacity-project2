@@ -22,15 +22,42 @@
  * Define Global Variables
  * 
 */
-
+const sections = document.querySelectorAll('section');
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+const createNavListItem = (section) => {
+  const newLi = document.createElement('li');
+  const sectionTitle = section.getAttribute('data-nav');
+  let linkHtml = '';
+  
+  if(sectionTitle === 'Section 1') {
+    linkHtml = `<a class="menu__link menu__link_active" href="#">${sectionTitle}</a>`;
+  } else {
+    linkHtml = `<a class="menu__link" href="#">${sectionTitle}</a>`;
+  }
 
+  newLi.insertAdjacentHTML('beforeend', linkHtml);
+  const link = newLi.querySelector('.menu__link');
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    section.scrollIntoView(true);
+  });
 
+  return newLi;
+};
+
+const generateNavList = () => {
+  const navList = document.getElementById('navbar__list');
+
+  sections.forEach(section => {
+    const newLi = createNavListItem(section);
+    navList.appendChild(newLi);
+  });
+};
 
 /**
  * End Helper Functions
@@ -39,7 +66,7 @@
 */
 
 // build the nav
-
+generateNavList();
 
 // Add class 'active' to section when near top of viewport
 
