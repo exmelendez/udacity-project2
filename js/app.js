@@ -24,6 +24,8 @@
 */
 const sections = document.querySelectorAll('section');
 const navList = document.getElementById('navbar__list');
+const topNavBtn = document.getElementById('top-nav-btn');
+const pageTop = document.getElementById('top');
 
 /**
  * End Global Variables
@@ -107,4 +109,9 @@ window.addEventListener('scroll', () => {
       link.classList.add('menu__link_active');
     }
   });
+});
+
+topNavBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo(0, 0);
 });
