@@ -23,6 +23,7 @@
  * 
 */
 const sections = document.querySelectorAll('section');
+const navList = document.getElementById('navbar__list');
 
 /**
  * End Global Variables
@@ -40,7 +41,7 @@ const createNavListItem = (section) => {
     linkHtml = `<a class="menu__link" href="#">${sectionTitle}</a>`;
   }
 
-  newLi.insertAdjacentHTML('beforeend', linkHtml);
+  newLi.innerHTML = linkHtml;
   const link = newLi.querySelector('.menu__link');
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -51,8 +52,6 @@ const createNavListItem = (section) => {
 };
 
 const generateNavList = () => {
-  const navList = document.getElementById('navbar__list');
-
   sections.forEach(section => {
     const newLi = createNavListItem(section);
     navList.appendChild(newLi);
@@ -85,4 +84,33 @@ generateNavList();
 // Scroll to section on link click
 
 // Set sections as active
-
+window.addEventListener('scroll', () => {
+  let sectionTitle = '';
+  let currentElement;
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+   
+    if(scrollY >= (sectionTop - sectionHeight / 7)) {
+      sectionTitle = section.getAttribute('data-nav');
+      currentElement = section;
+    }
+    
+    /*
+    section.classList.remove('active');
+    
+    if(section.getAttribute('id') === sectionTitle) {
+      section.classList.add('active');
+    }
+    */
+  });
+  
+  navList.querySelectorAll('.menu__link').forEach(link => {
+    link.classList.remove('menu__link_active');
+    
+    if(link.textContent === sectionTitle) {
+      link.classList.add('menu__link_active');
+    }
+  });
+});
