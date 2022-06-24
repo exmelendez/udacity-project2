@@ -33,13 +33,7 @@ const navList = document.getElementById('navbar__list');
 const createNavListItem = (section) => {
   const newLi = document.createElement('li');
   const sectionTitle = section.getAttribute('data-nav');
-  let linkHtml = '';
-  
-  if(sectionTitle === 'Section 1') {
-    linkHtml = `<a class="menu__link menu__link_active" href="#">${sectionTitle}</a>`;
-  } else {
-    linkHtml = `<a class="menu__link" href="#">${sectionTitle}</a>`;
-  }
+  let linkHtml = `<a class="menu__link" href="#">${sectionTitle}</a>`;
 
   newLi.innerHTML = linkHtml;
   const link = newLi.querySelector('.menu__link');
