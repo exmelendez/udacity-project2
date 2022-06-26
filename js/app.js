@@ -82,24 +82,22 @@ generateNavList();
 // Set sections as active
 window.addEventListener('scroll', () => {
   let sectionTitle = '';
-  let currentElement;
-  
+
   sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-   
-    if(scrollY >= (sectionTop - sectionHeight / 7)) {
+    const sectionData = section.getBoundingClientRect();
+    const sectionBottom = sectionData.bottom;
+    const sectionTop = sectionData.top;
+    const sectionHeight = sectionData.height;
+
+    if(sectionTop <= 0 && sectionBottom >= sectionHeight / 8) {
       sectionTitle = section.getAttribute('data-nav');
-      currentElement = section;
     }
     
-    /*
     section.classList.remove('active');
     
-    if(section.getAttribute('id') === sectionTitle) {
+    if(section.getAttribute('data-nav') === sectionTitle) {
       section.classList.add('active');
     }
-    */
   });
   
   navList.querySelectorAll('.menu__link').forEach(link => {
