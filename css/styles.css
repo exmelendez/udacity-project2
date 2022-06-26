@@ -66,6 +66,19 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__home-link {
+  color: #000;
+  margin: 0;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
 .navbar__menu ul {
   padding-left: 0;
   margin: 0;

@@ -26,6 +26,7 @@ const sections = document.querySelectorAll('section');
 const navList = document.getElementById('navbar__list');
 const topNavBtn = document.getElementById('top-nav-btn');
 const pageTop = document.getElementById('top');
+const homeLink = document.getElementById('home-link');
 
 /**
  * End Global Variables
@@ -112,4 +113,9 @@ window.addEventListener('scroll', () => {
 topNavBtn.addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo(0, 0);
+});
+
+homeLink.addEventListener('click', () => {
+  console.log('Clicked ');
+  window.location.replace('./index.html'); 
 });
