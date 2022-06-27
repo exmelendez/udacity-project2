@@ -74,6 +74,7 @@ section {
 
 .navbar__home-link {
   color: #000;
+  font-weight: bold;
   margin: 0;
   padding: 0 16px;
   cursor: pointer;
