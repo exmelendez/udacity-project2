@@ -72,25 +72,34 @@ section {
   align-items: center;
 }
 
+.navbar__home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navbar__home-link {
   color: #000;
   font-weight: bold;
   margin: 0;
   padding: 0 16px;
-  cursor: pointer;
 }
 
-.navbar__menu ul {
+.navbar__btn {
+  display: none;
+}
+
+.navbar__list {
   padding-left: 0;
   margin: 0;
   text-align: right;
 }
 
-.navbar__menu li {
+.navbar__list li {
   display: inline-block;
 }
 
-.navbar__menu .menu__link {
+.menu__link {
   display: block;
   padding: 1em;
   font-weight: bold;
@@ -98,7 +107,7 @@ section {
   color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.menu__link:hover {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
@@ -107,6 +116,29 @@ section {
 .menu__link_active {
   color: #fff !important;
   background: #000;
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+  .navbar__menu {
+    flex-direction: column;
+  }
+
+  .navbar__home-container {
+    width: 100%;
+  }
+
+  .navbar__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar__btn {
+    display: block;
+    color: #000;
+    padding: 0 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 /* Header Styles */

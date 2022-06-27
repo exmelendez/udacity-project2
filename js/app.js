@@ -23,7 +23,7 @@
  * 
 */
 const sections = document.querySelectorAll('section');
-const navList = document.getElementById('navbar__list');
+const navList = document.getElementById('navbar-list');
 const topNavBtn = document.getElementById('top-nav-btn');
 const pageTop = document.getElementById('top');
 const homeLink = document.getElementById('home-link');
