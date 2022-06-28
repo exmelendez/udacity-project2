@@ -27,6 +27,7 @@ const navList = document.getElementById('navbar-list');
 const topNavBtn = document.getElementById('top-nav-btn');
 const pageTop = document.getElementById('top');
 const homeLink = document.getElementById('home-link');
+const navMenuBtn = document.getElementById('menu-btn');
 
 /**
  * End Global Variables
@@ -43,6 +44,11 @@ const createNavListItem = (section) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     section.scrollIntoView(true);
+
+    if(navList.classList.contains('show')) {
+      navList.classList.toggle('show');
+    }
+
   });
 
   return newLi;
@@ -118,4 +124,8 @@ topNavBtn.addEventListener('click', (e) => {
 homeLink.addEventListener('click', () => {
   console.log('Clicked ');
   window.location.replace('./index.html'); 
+});
+
+navMenuBtn.addEventListener('click', () => {
+  navList.classList.toggle('show');
 });

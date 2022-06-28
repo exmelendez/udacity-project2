@@ -68,6 +68,7 @@ section {
 /* Navigation Styles*/
 .navbar__menu {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -87,12 +88,23 @@ section {
 
 .navbar__btn {
   display: none;
+  background-color: transparent;
+  border: 0;
+  font-size: 19px;
+  cursor: pointer;
 }
 
 .navbar__list {
+  display: block;
+  text-align: right;
+
   padding-left: 0;
   margin: 0;
-  text-align: right;
+}
+
+.navbar__list.show {
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar__list li {
@@ -120,7 +132,7 @@ section {
 
 @media(min-width: 320px) and (max-width: 767px) {
   .navbar__menu {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .navbar__home-container {
@@ -128,8 +140,8 @@ section {
   }
 
   .navbar__list {
-    display: flex;
-    flex-direction: column;
+    display: none;
+    width: 100%;
   }
 
   .navbar__btn {
@@ -138,6 +150,10 @@ section {
     padding: 0 16px;
     cursor: pointer;
     text-decoration: none;
+  }
+
+  .menu__link {
+    text-align: center;
   }
 }
 
