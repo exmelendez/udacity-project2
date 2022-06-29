@@ -1,13 +1,16 @@
 # Landing Page Project
 
-## Table of Contents
+## **Overview**
 
-* [Instructions](#instructions)
+The project in its entirety is a single page site that features a dynamic nav menu which programmatically generates based on the names and amount of sections on the page.
 
-## Instructions
+The page is also designed to hightlight the active section from within the nav menu while also adding an *active* class to the section element. A button is fixed to the bottom, right corner of the page allowing the user to scroll to the top of the page. Lastly, the page is responsive and features a hamburger button when viewing on screen sizes 767px or smaller.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Technologies / Languages / Features used . . .
+* HTML
+* CSS
+* Flexbox
+* Media Queries
+* JavaScript
+* ES6 Syntax
